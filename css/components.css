@@ -1,0 +1,229 @@
+/* Component Styles */
+
+/* Container */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: white;
+    border: 2px solid var(--color-accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background-color: var(--color-success);
+    color: white;
+    border: 2px solid var(--color-success);
+}
+
+.btn-whatsapp:hover {
+    background-color: #0D9668;
+    border-color: #0D9668;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-small);
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: var(--font-size-body);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Cards */
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: var(--space-3);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--space-1);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    font-size: var(--font-size-small);
+}
+
+.form-input {
+    width: 100%;
+    height: 48px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-body);
+    transition: all var(--transition-fast);
+    background-color: var(--color-surface);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-input::placeholder {
+    color: #94A3B8;
+}
+
+.form-error {
+    display: none;
+    margin-top: var(--space-1);
+    font-size: var(--font-size-small);
+    color: var(--color-error);
+}
+
+.form-error.active {
+    display: block;
+}
+
+.form-success {
+    display: none;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    background-color: #ECFDF5;
+    border: 1px solid var(--color-success);
+    border-radius: var(--radius-sm);
+    margin-top: var(--space-3);
+}
+
+.form-success.active {
+    display: flex;
+}
+
+.form-success p {
+    margin: 0;
+    color: var(--color-success);
+    font-weight: var(--font-weight-medium);
+}
+
+/* Section */
+.section {
+    padding: var(--space-12) 0;
+}
+
+.section-alt {
+    background-color: var(--color-surface);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in-delay-1 {
+    animation: fadeIn 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.fade-in-delay-2 {
+    animation: fadeIn 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+.fade-in-delay-3 {
+    animation: fadeIn 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .btn-large {
+        padding: 0.875rem 1.5rem;
+        font-size: var(--font-size-small);
+    }
+
+    .section {
+        padding: var(--space-8) 0;
+    }
+
+    .section-title {
+        margin-bottom: var(--space-6);
+    }
+}
