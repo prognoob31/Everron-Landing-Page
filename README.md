@@ -3,7 +3,7 @@
 AI Automation Agency - 24/7 WhatsApp Automation for Businesses
 
 ## 🚀 Live Site
-[View Live Site]([https://yourusername.github.io/Everrondottech/](https://prognoob31.github.io/Everron-Landing-Page/))
+[View Live Site](https://prognoob31.github.io/Everron-Landing-Page/)
 
 ## 📋 About
 EVERRON delivers 24/7 automated WhatsApp replies that turn every inquiry into a conversion opportunity. This landing page showcases our AI automation services with a modern, clean design.
