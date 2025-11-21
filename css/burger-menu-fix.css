@@ -1,0 +1,28 @@
+/* Mobile Burger Menu Fix */
+/* This adds the missing .active state to show the navigation menu on mobile */
+
+@media (max-width: 768px) {
+    .nav-links.active {
+        display: flex !important;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #E2E8F0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        padding: 1rem 0;
+        z-index: 999;
+    }
+
+    .nav-links.active .nav-link {
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid #E2E8F0;
+    }
+
+    .nav-links.active .nav-link:last-child {
+        border-bottom: none;
+    }
+}
