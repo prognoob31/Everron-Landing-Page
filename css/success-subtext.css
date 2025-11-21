@@ -1,0 +1,7 @@
+/* Success message subtext styling */
+.form-success .success-subtext {
+    margin-top: 0.25rem;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-regular);
+    color: #059669;
+}

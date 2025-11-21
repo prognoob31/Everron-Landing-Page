@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clear Cache Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #2563EB;
+        }
+
+        .method {
+            background: #f0f9ff;
+            border-left: 4px solid #2563EB;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .method h2 {
+            margin-top: 0;
+            color: #1e40af;
+        }
+
+        code {
+            background: #e5e7eb;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .important {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔧 Fix: Clear Your Browser Cache</h1>
+
+    <div class="important">
+        <strong>The Problem:</strong> Your browser is showing the OLD cached version of index.html, even though the file
+        has been updated with the new message.
+    </div>
+
+    <div class="method">
+        <h2>Method 1: Hard Refresh (FASTEST)</h2>
+        <p><strong>Windows:</strong></p>
+        <ul>
+            <li>Press <code>Ctrl + Shift + R</code></li>
+            <li>OR press <code>Ctrl + F5</code></li>
+        </ul>
+        <p><strong>Mac:</strong></p>
+        <ul>
+            <li>Press <code>Cmd + Shift + R</code></li>
+        </ul>
+    </div>
+
+    <div class="method">
+        <h2>Method 2: Open in Incognito/Private Window</h2>
+        <p><strong>Chrome:</strong> <code>Ctrl + Shift + N</code></p>
+        <p><strong>Firefox:</strong> <code>Ctrl + Shift + P</code></p>
+        <p><strong>Edge:</strong> <code>Ctrl + Shift + N</code></p>
+        <p>Then open your index.html file in the incognito window.</p>
+    </div>
+
+    <div class="method">
+        <h2>Method 3: Clear Cache via DevTools</h2>
+        <ol>
+            <li>Press <code>F12</code> to open DevTools</li>
+            <li>Right-click the refresh button (next to address bar)</li>
+            <li>Select <strong>"Empty Cache and Hard Reload"</strong></li>
+        </ol>
+    </div>
+
+    <div class="method">
+        <h2>Method 4: Disable Cache in DevTools</h2>
+        <ol>
+            <li>Press <code>F12</code> to open DevTools</li>
+            <li>Go to <strong>Network</strong> tab</li>
+            <li>Check the box <strong>"Disable cache"</strong></li>
+            <li>Keep DevTools open and refresh the page</li>
+        </ol>
+    </div>
+
+    <div class="important">
+        <h3>✅ Verification:</h3>
+        <p>After clearing cache, when you submit the form, you should see:</p>
+        <ul>
+            <li>✓ Green checkmark</li>
+            <li><strong>"Your form has been submitted successfully!"</strong></li>
+            <li>"We respond within 24 business hours."</li>
+        </ul>
+    </div>
+
+    <script>
+        // Add timestamp to help verify this page isn't cached
+        document.body.innerHTML += '<p style="color: #6b7280; font-size: 12px; margin-top: 40px;">Page loaded at: ' + new Date().toLocaleString() + '</p>';
+    </script>
+</body>
+
+</html>

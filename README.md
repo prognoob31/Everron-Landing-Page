@@ -70,7 +70,10 @@ To run locally:
 - **WhatsApp**: Edit line 303 in `index.html`
 
 ### Update Form Submission
-- Edit `js/form-validation.js` to connect to your backend/CRM
+- The form is now integrated with **Google Apps Script** for email delivery
+- See [GOOGLE_SCRIPT_SETUP.md](GOOGLE_SCRIPT_SETUP.md) for deployment instructions
+- Quick start: [QUICKSTART_GOOGLE_SCRIPT.md](QUICKSTART_GOOGLE_SCRIPT.md)
+- Update the script URL in `js/form-validation.js` (line 131)
 
 ### Modify Colors
 - Edit `css/variables.css` to change the color scheme

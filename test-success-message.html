@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Message Test</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/success-subtext.css">
+    <style>
+        body {
+            padding: 50px;
+            font-family: Inter, sans-serif;
+        }
+
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        button {
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #2563EB;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test-container">
+        <h1>Success Message Display Test</h1>
+
+        <button onclick="showMessage()">Click to Show Success Message</button>
+
+        <div class="form-success" id="testSuccess">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="#10B981" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <div>
+                <p><strong>Your form has been submitted successfully!</strong></p>
+                <p class="success-subtext">We respond within 24 business hours.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            const successEl = document.getElementById('testSuccess');
+            successEl.classList.add('active');
+            console.log('Active class added!');
+            console.log('Element classes:', successEl.className);
+            console.log('Computed display:', window.getComputedStyle(successEl).display);
+        }
+    </script>
+</body>
+
+</html>

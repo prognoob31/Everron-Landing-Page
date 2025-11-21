@@ -124,25 +124,59 @@ if (leadForm) {
         submitButton.textContent = 'Submitting...';
 
         try {
-            // Simulate API call (replace with actual endpoint)
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            // ============================================
+            // GOOGLE APPS SCRIPT CONFIGURATION
+            // ============================================
+            // TODO: Replace this URL with your deployed Google Apps Script URL
+            // See GOOGLE_SCRIPT_SETUP.md for deployment instructions
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby8QtLSgu45KHTrJNnL0ucI4wXez376FQyXoCsdkf94JfGgYITP-EbGBzINzsIm75JJ_w/exec';
+
+            // Check if script URL is configured
+            if (SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+                throw new Error('Google Apps Script URL not configured. Please see GOOGLE_SCRIPT_SETUP.md');
+            }
+
+            // Prepare data for submission
+            const submissionData = {
+                fullName: formData.get('fullName'),
+                businessType: formData.get('businessType'),
+                whatsappNumber: formData.get('whatsappNumber'),
+                messageVolume: formData.get('messageVolume')
+            };
+
+            // Send to Google Apps Script
+            const response = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Required for Google Apps Script
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(submissionData)
+            });
+
+            // Note: With 'no-cors' mode, we can't read the response
+            // But if no error is thrown, the request was sent successfully
 
             // Show success message
             leadForm.style.display = 'none';
             formSuccess.classList.add('active');
 
-            // Log form data (replace with actual submission)
-            console.log('Form submitted:', Object.fromEntries(formData));
-
-            // Optional: Send to actual endpoint
-            // const response = await fetch('/api/submit-lead', {
-            //     method: 'POST',
-            //     body: formData
-            // });
+            // Log for debugging
+            console.log('Form submitted successfully:', submissionData);
 
         } catch (error) {
             console.error('Form submission error:', error);
-            alert('There was an error submitting the form. Please try again.');
+
+            // Show user-friendly error message
+            let errorMessage = 'There was an error submitting the form. Please try again.';
+
+            if (error.message.includes('not configured')) {
+                errorMessage = 'Form is not yet configured. Please contact support.';
+            } else if (error.message.includes('Failed to fetch')) {
+                errorMessage = 'Network error. Please check your connection and try again.';
+            }
+
+            alert(errorMessage);
             submitButton.disabled = false;
             submitButton.textContent = originalText;
         }
